@@ -20,6 +20,7 @@ public class Lista_Circular {
      cabeza=null;
      sig=null;
      primernodo=null;
+   
      tam=0;
      
      }
@@ -46,6 +47,7 @@ public class Lista_Circular {
              
           
      }
+     
      public int tamaño(){
      return tam;
      }

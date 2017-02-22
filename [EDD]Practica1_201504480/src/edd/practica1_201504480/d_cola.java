@@ -10,28 +10,21 @@ package edd.practica1_201504480;
  *
  * @author HP
  */
-public class Nodo_c {
-        nodo_s sig;
+public class d_cola {
+     d_cola sig;
+
     Object info;
-    Object fichas;
 
        public void setInfo(Object info){
     this.info=info;
-    this.fichas=null;
     this.sig=null;
+
     }
-        public void setfichas(Object fichas){
-        this.fichas=fichas;
-        }
-        
-//   public void setfichas(Object fichas){
-//        this.fichas=fichas;
-//        }
- public void setSig(nodo_s sig){
+ public void setSig(d_cola  sig){
     this.sig=sig;
     }
     
-    public nodo_s getSig() {
+    public d_cola  getSig() {
         return sig;
     }
 

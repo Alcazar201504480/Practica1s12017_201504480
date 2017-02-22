@@ -60,6 +60,7 @@ class leerxml {
         {
               Element tabla = (Element) list.get(i);
                d1.enlistar(tabla.getChildTextTrim("x"));
+             
                 d1.enlistar(tabla.getChildTextTrim("y"));
 //              JOptionPane.showMessageDialog(null,""+tabla.getChildTextTrim("x").toString());
 //                JOptionPane.showMessageDialog(null,""+tabla.getChildTextTrim("y").toString());

@@ -6,6 +6,8 @@
 
 package edd.practica1_201504480;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -130,8 +132,15 @@ public class jugador extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Principal_juego abr= new Principal_juego(ab,rr);
-                abr.show();
+        System.out.println(ab.tam);
+        Principal_juego abr;
+        try {
+            abr = new Principal_juego(ab,rr);
+              abr.show();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(jugador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+              
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

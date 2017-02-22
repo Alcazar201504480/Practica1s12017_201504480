@@ -51,6 +51,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jButton2.setText("Jugar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,6 +112,24 @@ public class Principal extends javax.swing.JFrame {
       jFileChooser2.showOpenDialog( jFileChooser2);
               
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+//        matriz_ortogonal g= new matriz_ortogonal();
+//        g.crear(7+1);
+//        g.darvalor(2, 3, 4545);
+//        cola a = new cola();
+//        a.push("1");
+//        a.push("2");
+//        a.push("3");
+//        a.push("4");
+//        System.out.println(a.pop()+"r ");    
+//                
+//       a.mostrar();
+//       
+//       System.out.println(a.pop()+"r ");    
+//         a.mostrar();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -24,35 +24,40 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="pan1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel1" min="-2" pref="52" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabel8" min="-2" pref="52" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabel10" min="-2" pref="52" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabel9" min="-2" pref="52" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabel12" min="-2" pref="52" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabel11" min="-2" pref="52" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabel14" min="-2" pref="52" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="jLabel13" min="-2" pref="94" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                               <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="l1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="l6" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                                      <Component id="l7" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="l2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                      <Component id="l3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="l4" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="l5" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -65,7 +70,7 @@
                               <Component id="jLabel18" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel16" min="-2" pref="104" max="-2" attributes="0"/>
+                                      <Component id="ju1" min="-2" pref="104" max="-2" attributes="0"/>
                                       <Component id="jLabel15" min="-2" pref="104" max="-2" attributes="0"/>
                                       <Component id="jScrollPane1" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
                                       <Component id="jLabel17" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
@@ -90,16 +95,16 @@
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="checkbox2" min="-2" pref="39" max="-2" attributes="0"/>
-                                              <Component id="checkbox1" min="-2" pref="39" max="-2" attributes="0"/>
-                                              <Component id="checkbox3" min="-2" pref="39" max="-2" attributes="0"/>
-                                              <Component id="checkbox6" alignment="1" min="-2" pref="39" max="-2" attributes="0"/>
+                                              <Component id="c2" min="-2" pref="39" max="-2" attributes="0"/>
+                                              <Component id="c1" min="-2" pref="39" max="-2" attributes="0"/>
+                                              <Component id="c3" min="-2" pref="39" max="-2" attributes="0"/>
+                                              <Component id="c4" alignment="1" min="-2" pref="39" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="checkbox4" min="-2" pref="39" max="-2" attributes="0"/>
-                                              <Component id="checkbox5" min="-2" pref="39" max="-2" attributes="0"/>
-                                              <Component id="checkbox7" alignment="0" min="-2" pref="39" max="-2" attributes="0"/>
+                                              <Component id="c5" min="-2" pref="39" max="-2" attributes="0"/>
+                                              <Component id="c6" min="-2" pref="39" max="-2" attributes="0"/>
+                                              <Component id="c7" alignment="0" min="-2" pref="39" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -135,18 +140,21 @@
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel1" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="jLabel12" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="jLabel11" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="jLabel14" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="jLabel9" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="jLabel10" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="jLabel8" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="pan1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="l1" pref="55" max="32767" attributes="0"/>
+                          <Component id="l2" alignment="0" max="32767" attributes="0"/>
+                          <Component id="l3" alignment="0" max="32767" attributes="0"/>
+                          <Component id="l5" alignment="0" max="32767" attributes="0"/>
+                          <Component id="l4" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="l6" max="32767" attributes="0"/>
+                          <Component id="l7" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel13" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                           <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -161,7 +169,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jLabel16" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="ju1" min="-2" pref="22" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="jLabel18" min="-2" pref="22" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -176,21 +184,21 @@
                               <Component id="jLabel19" min="-2" pref="22" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="checkbox4" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkbox1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="c5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="c1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="checkbox2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkbox5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="c2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="c6" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="checkbox7" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkbox3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="c7" min="-2" max="-2" attributes="0"/>
+                                  <Component id="c3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="checkbox6" min="-2" max="-2" attributes="0"/>
+                              <Component id="c4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -204,7 +212,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="pan1">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -230,76 +238,6 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="------"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
-          </Border>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel8">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="------"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
-          </Border>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel9">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="------"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
-          </Border>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel10">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="------"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
-          </Border>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel11">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="------"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
-          </Border>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel12">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="------"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
-          </Border>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel14">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="------"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
-          </Border>
-        </Property>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel13">
       <Properties>
         <Property name="text" type="java.lang.String" value="Letras Activas"/>
@@ -309,6 +247,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Validar Tiro"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
@@ -320,7 +261,7 @@
         <Property name="text" type="java.lang.String" value="Turno de:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel16">
+    <Component class="javax.swing.JLabel" name="ju1">
       <Properties>
         <Property name="text" type="java.lang.String" value="jugador?"/>
       </Properties>
@@ -376,38 +317,41 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cambiar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox1">
+    <Component class="java.awt.Checkbox" name="c1">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox1"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox2">
+    <Component class="java.awt.Checkbox" name="c2">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox1"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox3">
+    <Component class="java.awt.Checkbox" name="c3">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox1"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox4">
+    <Component class="java.awt.Checkbox" name="c5">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox1"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox5">
+    <Component class="java.awt.Checkbox" name="c6">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox1"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox6">
+    <Component class="java.awt.Checkbox" name="c4">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox1"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox7">
+    <Component class="java.awt.Checkbox" name="c7">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox1"/>
       </Properties>
@@ -421,11 +365,11 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel3">
+        <Container class="javax.swing.JPanel" name="fac">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="tab1">
-                <Property name="tabTitle" type="java.lang.String" value="tab1"/>
+              <JTabbedPaneConstraints tabName="fichas activas">
+                <Property name="tabTitle" type="java.lang.String" value="fichas activas"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -433,36 +377,21 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                      <Component id="jButton6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="283" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="449" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="jButton6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="609" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="706" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JButton" name="jButton6">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jButton6"/>
-              </Properties>
-            </Component>
-          </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel4">
+        <Container class="javax.swing.JPanel" name="m1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="tab2">
-                <Property name="tabTitle" type="java.lang.String" value="tab2"/>
+              <JTabbedPaneConstraints tabName="Matriz">
+                <Property name="tabTitle" type="java.lang.String" value="Matriz"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -470,36 +399,21 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
-                      <Component id="jButton7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="277" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="449" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                      <Component id="jButton7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="636" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="706" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JButton" name="jButton7">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jButton7"/>
-              </Properties>
-            </Component>
-          </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel5">
+        <Container class="javax.swing.JPanel" name="cf">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="tab3">
-                <Property name="tabTitle" type="java.lang.String" value="tab3"/>
+              <JTabbedPaneConstraints tabName="Cola de Fichas">
+                <Property name="tabTitle" type="java.lang.String" value="Cola de Fichas"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -507,36 +421,21 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="296" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="449" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="622" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="706" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JButton" name="jButton5">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jButton5"/>
-              </Properties>
-            </Component>
-          </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel6">
+        <Container class="javax.swing.JPanel" name="diccionario">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="tab4">
-                <Property name="tabTitle" type="java.lang.String" value="tab4"/>
+              <JTabbedPaneConstraints tabName="Lista Diccionario 1">
+                <Property name="tabTitle" type="java.lang.String" value="Lista Diccionario 1"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -544,54 +443,21 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                              <Component id="jButton8" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                              <Component id="jButton10" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace pref="277" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="449" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                      <Component id="jButton8" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
-                      <Component id="jButton10" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="367" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="706" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JButton" name="jButton8">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jButton8"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton10">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jButton10"/>
-              </Properties>
-            </Component>
-          </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel7">
+        <Container class="javax.swing.JPanel" name="lj">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Lista Diccionario">
-                <Property name="tabTitle" type="java.lang.String" value="Lista Diccionario"/>
+              <JTabbedPaneConstraints tabName="Lista Jugadores">
+                <Property name="tabTitle" type="java.lang.String" value="Lista Jugadores"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -599,34 +465,52 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="diccionario" alignment="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="449" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="diccionario" alignment="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="706" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
-          <SubComponents>
-            <Container class="javax.swing.JPanel" name="diccionario">
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="449" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="706" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-            </Container>
-          </SubComponents>
         </Container>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="l1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="l2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="l3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="l4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="l5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="l6">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="l7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton5"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>

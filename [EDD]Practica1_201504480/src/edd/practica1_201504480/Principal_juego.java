@@ -6,14 +6,20 @@
 
 package edd.practica1_201504480;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.LayoutManager;
+import java.awt.Panel;
 import java.awt.image.ImageObserver;
 import java.awt.image.ImageProducer;
+import java.io.File;
+import java.io.FileWriter;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -25,13 +31,45 @@ public class Principal_juego extends javax.swing.JFrame {
     /**
      * Creates new form Principal_juego
      */
-    public Principal_juego(leerxml ab, Lista_Circular rr) {
-        reportes re = new reportes();
-       
-        //diccionario.imageUpdate(re.dic(ab.datosdic()));
-
-
+    Lista_Simple abs = new Lista_Simple();
+    Lista_Simple abj = new Lista_Simple();
+    
+     Lista_Circular rr= new Lista_Circular ();
+     cola col = new cola();
+     matriz_ortogonal orto = new matriz_ortogonal();
+     matriz_ortogonal orto1 = new matriz_ortogonal();
+     int tamañot;
+    public Principal_juego(leerxml ab1, Lista_Circular rr1) throws InterruptedException {
+        
+        abs =ab1.datosdic();
+        rr = rr1;
         initComponents();
+        actualizardic();
+        actualizardic1();
+        tamañot = ab1.datostdimension();
+           
+        actualizard();
+
+                cola1();
+                
+               actcola();
+               
+               lista_jugadores();
+               lsita_j_act();
+               matriz(ab1.datostdimension(),ab1.datosdobles(),ab1.datostriples());
+               agregar_matriz();
+               
+               fichasjugador();
+               comenzarj();
+               
+               agregarjuego();
+               crear_Tablero();
+               fac.repaint();
+               cf.repaint();
+               lj.repaint();
+jTabbedPane1.repaint();
+this.repaint();
+
     }
 
    
@@ -45,19 +83,12 @@ public class Principal_juego extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        pan1 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        ju1 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
@@ -66,74 +97,59 @@ public class Principal_juego extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        checkbox1 = new java.awt.Checkbox();
-        checkbox2 = new java.awt.Checkbox();
-        checkbox3 = new java.awt.Checkbox();
-        checkbox4 = new java.awt.Checkbox();
-        checkbox5 = new java.awt.Checkbox();
-        checkbox6 = new java.awt.Checkbox();
-        checkbox7 = new java.awt.Checkbox();
+        c1 = new java.awt.Checkbox();
+        c2 = new java.awt.Checkbox();
+        c3 = new java.awt.Checkbox();
+        c5 = new java.awt.Checkbox();
+        c6 = new java.awt.Checkbox();
+        c4 = new java.awt.Checkbox();
+        c7 = new java.awt.Checkbox();
         jLabel20 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel3 = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jButton7 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
-        jButton8 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jPanel7 = new javax.swing.JPanel();
+        fac = new javax.swing.JPanel();
+        m1 = new javax.swing.JPanel();
+        cf = new javax.swing.JPanel();
         diccionario = new javax.swing.JPanel();
+        lj = new javax.swing.JPanel();
+        l1 = new javax.swing.JButton();
+        l2 = new javax.swing.JButton();
+        l3 = new javax.swing.JButton();
+        l4 = new javax.swing.JButton();
+        l5 = new javax.swing.JButton();
+        l6 = new javax.swing.JButton();
+        l7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.setPreferredSize(new java.awt.Dimension(550, 550));
-        jPanel1.setVerifyInputWhenFocusTarget(false);
+        pan1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pan1.setPreferredSize(new java.awt.Dimension(550, 550));
+        pan1.setVerifyInputWhenFocusTarget(false);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pan1Layout = new javax.swing.GroupLayout(pan1);
+        pan1.setLayout(pan1Layout);
+        pan1Layout.setHorizontalGroup(
+            pan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 548, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pan1Layout.setVerticalGroup(
+            pan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 548, Short.MAX_VALUE)
         );
-
-        jLabel1.setText("------");
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel8.setText("------");
-        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel9.setText("------");
-        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel10.setText("------");
-        jLabel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel11.setText("------");
-        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel12.setText("------");
-        jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel14.setText("------");
-        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel13.setText("Letras Activas");
 
         jButton1.setText("Validar Tiro");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cancelar Tiro");
 
         jLabel15.setText("Turno de:");
 
-        jLabel16.setText("jugador?");
+        ju1.setText("jugador?");
 
         jLabel17.setText("Nueva Palabra");
 
@@ -156,120 +172,66 @@ public class Principal_juego extends javax.swing.JFrame {
         jLabel19.setText("Cambiar Letras");
 
         jButton4.setText("Cambiar");
-
-        checkbox1.setLabel("checkbox1");
-
-        checkbox2.setLabel("checkbox1");
-
-        checkbox3.setLabel("checkbox1");
-
-        checkbox4.setLabel("checkbox1");
-
-        checkbox5.setLabel("checkbox1");
-
-        checkbox6.setLabel("checkbox1");
-
-        checkbox7.setLabel("checkbox1");
-
-        jLabel20.setText("Area de Reportes");
-
-        jButton6.setText("jButton6");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addComponent(jButton6)
-                .addContainerGap(283, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(jButton6)
-                .addContainerGap(609, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("tab1", jPanel3);
-
-        jButton7.setText("jButton7");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(jButton7)
-                .addContainerGap(277, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(jButton7)
-                .addContainerGap(636, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("tab2", jPanel4);
-
-        jButton5.setText("jButton5");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(jButton5)
-                .addContainerGap(296, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(jButton5)
-                .addContainerGap(622, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("tab3", jPanel5);
-
-        jButton8.setText("jButton8");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                jButton4ActionPerformed(evt);
             }
         });
 
-        jButton10.setText("jButton10");
+        c1.setLabel("checkbox1");
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(jButton8))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(jButton10)))
-                .addContainerGap(277, Short.MAX_VALUE))
+        c2.setLabel("checkbox1");
+
+        c3.setLabel("checkbox1");
+
+        c5.setLabel("checkbox1");
+
+        c6.setLabel("checkbox1");
+
+        c4.setLabel("checkbox1");
+
+        c7.setLabel("checkbox1");
+
+        jLabel20.setText("Area de Reportes");
+
+        javax.swing.GroupLayout facLayout = new javax.swing.GroupLayout(fac);
+        fac.setLayout(facLayout);
+        facLayout.setHorizontalGroup(
+            facLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 449, Short.MAX_VALUE)
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(jButton8)
-                .addGap(225, 225, 225)
-                .addComponent(jButton10)
-                .addContainerGap(367, Short.MAX_VALUE))
+        facLayout.setVerticalGroup(
+            facLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 706, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab4", jPanel6);
+        jTabbedPane1.addTab("fichas activas", fac);
+
+        javax.swing.GroupLayout m1Layout = new javax.swing.GroupLayout(m1);
+        m1.setLayout(m1Layout);
+        m1Layout.setHorizontalGroup(
+            m1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 449, Short.MAX_VALUE)
+        );
+        m1Layout.setVerticalGroup(
+            m1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 706, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Matriz", m1);
+
+        javax.swing.GroupLayout cfLayout = new javax.swing.GroupLayout(cf);
+        cf.setLayout(cfLayout);
+        cfLayout.setHorizontalGroup(
+            cfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 449, Short.MAX_VALUE)
+        );
+        cfLayout.setVerticalGroup(
+            cfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 706, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Cola de Fichas", cf);
 
         javax.swing.GroupLayout diccionarioLayout = new javax.swing.GroupLayout(diccionario);
         diccionario.setLayout(diccionarioLayout);
@@ -282,51 +244,69 @@ public class Principal_juego extends javax.swing.JFrame {
             .addGap(0, 706, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(diccionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        jTabbedPane1.addTab("Lista Diccionario 1", diccionario);
+
+        javax.swing.GroupLayout ljLayout = new javax.swing.GroupLayout(lj);
+        lj.setLayout(ljLayout);
+        ljLayout.setHorizontalGroup(
+            ljLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 449, Short.MAX_VALUE)
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(diccionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        ljLayout.setVerticalGroup(
+            ljLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 706, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Lista Diccionario", jPanel7);
+        jTabbedPane1.addTab("Lista Jugadores", lj);
+
+        l1.setText("jButton5");
+
+        l2.setText("jButton5");
+
+        l3.setText("jButton5");
+
+        l4.setText("jButton5");
+
+        l5.setText("jButton5");
+
+        l6.setText("jButton5");
+
+        l7.setText("jButton5");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(pan1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(92, 92, 92)
                                 .addComponent(jButton1)
                                 .addGap(46, 46, 46)
-                                .addComponent(jButton2)))))
+                                .addComponent(jButton2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(l1)
+                                .addGap(43, 43, 43)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(l6)
+                                        .addGap(65, 65, 65)
+                                        .addComponent(l7))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(l2)
+                                        .addGap(48, 48, 48)
+                                        .addComponent(l3)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(l4)
+                                        .addGap(29, 29, 29)
+                                        .addComponent(l5)))))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -335,7 +315,7 @@ public class Principal_juego extends javax.swing.JFrame {
                                 .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ju1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -354,15 +334,15 @@ public class Principal_juego extends javax.swing.JFrame {
                                             .addComponent(jButton4))
                                         .addGroup(layout.createSequentialGroup()
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(checkbox2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(checkbox1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(checkbox3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(checkbox6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(c2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(c1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(c3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(c4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(checkbox4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(checkbox5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(checkbox7, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                                .addComponent(c5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(c6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(c7, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                             .addGap(26, 26, 26)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -384,17 +364,19 @@ public class Principal_juego extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pan1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(l1, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                            .addComponent(l2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(l3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(l5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(l4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(l6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(l7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1)
@@ -406,7 +388,7 @@ public class Principal_juego extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ju1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
                                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -421,18 +403,18 @@ public class Principal_juego extends javax.swing.JFrame {
                                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(checkbox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(checkbox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(c5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(20, 20, 20)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(checkbox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(checkbox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(c2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(c6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(checkbox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(checkbox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(c7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(c3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(checkbox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton4))
                             .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 734, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -442,28 +424,34 @@ public class Principal_juego extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 //        // TODO add your handling code here:
+        
+        abs.enlistar(jTextField1.getText());
+                actualizardic();
 //        diccionario.imageUpdate("C:\\Users\\HP\\Pictures\\png\\13.jpg").getImage(),);
 //        	diccionario.background = new ImageIcon("C:\\Users\\HP\\Pictures\\png\\13.jpg").getImage();
-           ImageIcon img=new ImageIcon(this.getClass().getResource("C:\\Users\\HP\\Pictures\\png\\13.jpg"));
-   JLabel l=new JLabel(img);
-//       ImageIcon img=new ImageIcon(this.getClass().getResource("C:\\Users\\HP\\Pictures\\png\\13.jpg"));
-//             JPanel a = new JPanel();
-//grafico.drawImage(img.getImage(), 0, 0, height.width, height.height, null);
-//         a.setBounds(5, 5, 449, 706);
-//  //img.drawImage(" ", 0, 0, width, height, null);      
-diccionario.add(l);
+ ImageIcon img=new ImageIcon(("C:\\Users\\HP\\Documents\\11\\grafo1.jpg"));
+             JLabel l=new JLabel(img, JLabel.CENTER);
+         
+           l.setBounds(0, 0, 440, 706);
+             diccionario.add(l);
+             diccionario.repaint();
+jTabbedPane1.repaint();
 this.repaint();
 //          ImageFondo image=new ImageFondo();
 //        image.setImage("/recursos/java.jpg");
 //        setContentPane(image);
 //		repaint();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -501,46 +489,774 @@ this.repaint();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Checkbox checkbox1;
-    private java.awt.Checkbox checkbox2;
-    private java.awt.Checkbox checkbox3;
-    private java.awt.Checkbox checkbox4;
-    private java.awt.Checkbox checkbox5;
-    private java.awt.Checkbox checkbox6;
-    private java.awt.Checkbox checkbox7;
+    private java.awt.Checkbox c1;
+    private java.awt.Checkbox c2;
+    private java.awt.Checkbox c3;
+    private java.awt.Checkbox c4;
+    private java.awt.Checkbox c5;
+    private java.awt.Checkbox c6;
+    private java.awt.Checkbox c7;
+    private javax.swing.JPanel cf;
     private javax.swing.JPanel diccionario;
+    private javax.swing.JPanel fac;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JList jList1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel ju1;
+    private javax.swing.JButton l1;
+    private javax.swing.JButton l2;
+    private javax.swing.JButton l3;
+    private javax.swing.JButton l4;
+    private javax.swing.JButton l5;
+    private javax.swing.JButton l6;
+    private javax.swing.JButton l7;
+    private javax.swing.JPanel lj;
+    private javax.swing.JPanel m1;
+    private javax.swing.JPanel pan1;
     // End of variables declaration//GEN-END:variables
+
+    private void actualizardic() {
+    try {
+     
+File archivo=new File("C:\\Users\\HP\\Documents\\11\\grafo1.txt");
+
+FileWriter escribir=new FileWriter(archivo,false);
+nodo_s tem = abs.getcabeza();
+escribir.write("digraph G\n");
+escribir.write("");
+escribir.write("{ \n");
+escribir.write("");
+while (!(tem.getSig()==null)){
+    escribir.write(tem.getInfo()+"->"+tem.getSig().getInfo()+"\n");
+    tem = tem.getSig();
+
+}
+escribir.write("}");
+escribir.close();
+
+
+
+
+      String dotPath = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe" ;
+      String fileInputPath = "C:\\Users\\HP\\Documents\\11\\grafo1.txt";
+      String fileOutputPath = "C:\\Users\\HP\\Documents\\11\\grafo1.jpg";
+      String tParam = "-Tjpg";
+      String tOParam = "-o";
+      String[] cmd = new String[5];
+      cmd[0] = dotPath;
+      cmd[1] = tParam;
+      cmd[2] = fileInputPath;
+      cmd[3] = tOParam;
+      cmd[4] = fileOutputPath;
+                  
+      Runtime rt = Runtime.getRuntime();
+      
+      rt.exec( cmd );
+      
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    } finally {
+        System.out.println("error de algo");
+    }
+    
+    }
+
+    private void cola1() {
+        int a=12,b=2,c=4,d=5,e=12,f=1,g=2,h=2,i=6,j=1,l=4,m=2,n=5,ñ=1,o=9,p=2,q=1,r=5,s=6,t=4,u=5,v=1,x=1,y=1,z=1;
+        int total = a+b+c+d+e+f+g+h+i+j+l+m+n+ñ+o+p+q+r+s+t+u+v+x+y+z;
+         int  numero;
+        
+        while (!(total==0)){
+            numero = (int) (Math.random() * 25) + 1;
+            switch (numero) {
+                case 1:
+                    if (a==0){
+                    }else {
+                    a=a-1;
+                    total=total-1;
+                    col.push("A");
+                    }
+                    break;
+                case 2:
+                     if (b==0){
+                    }else {
+                    b=b-1;
+                    total=total-1;
+                    col.push("B");
+                    }
+                    break;
+                case 3:
+                     if (c==0){
+                    }else {
+                    c=c-1;
+                    total=total-1;
+                    col.push("C");
+                    }
+                    break;
+                case 4:
+                     if (d==0){
+                    }else {
+                    d=d-1;
+                    total=total-1;
+                    col.push("D");
+                    }
+                    break;
+                case 5:
+                     if (e==0){
+                    }else {
+                    e=e-1;
+                    total=total-1;
+                    col.push("E");
+                    }
+                    break;
+                case 6:
+                     if (f==0){
+                    }else {
+                    f=f-1;
+                    total=total-1;
+                    col.push("F");
+                    }
+                    break;
+                case 7:
+                     if (g==0){
+                    }else {
+                    g=g-1;
+                    total=total-1;
+                    col.push("G");
+                    }
+                    break;
+                case 8:
+                     if (h==0){
+                    }else {
+                    h=h-1;
+                    total=total-1;
+                    col.push("H");
+                    }
+                    break;
+                    case 9:
+                     if (i==0){
+                    }else {
+                    i=i-1;
+                    total=total-1;
+                    col.push("I");
+                    }
+                    break;
+                        case 10:
+                     if (j==0){
+                    }else {
+                    j=j-1;
+                    total=total-1;
+                    col.push("J");
+                    }
+                    break;
+                         case 11:
+                     if (l==0){
+                    }else {
+                    l=l-1;
+                    total=total-1;
+                    col.push("L");
+                    }
+                    break;
+                    case 12:
+                     if (m==0){
+                    }else {
+                    m=m-1;
+                    total=total-1;
+                    col.push("M");
+                    }
+                    break;
+                        case 13:
+                     if (ñ==0){
+                    }else {
+                    ñ=ñ-1;
+                    total=total-1;
+                    col.push("Ñ");
+                    }
+                    break;
+                            case 14:
+                     if (n==0){
+                    }else {
+                    n=n-1;
+                    total=total-1;
+                    col.push("N");
+                    }
+                    break;
+                          case 15:
+                     if (o==0){
+                    }else {
+                    o=o-1;
+                    total=total-1;
+                    col.push("O");
+                    }
+                    break;
+                              case 16:
+                     if (p==0){
+                    }else {
+                    p=p-1;
+                    total=total-1;
+                    col.push("P");
+                    }
+                    break;
+                                  case 17:
+                     if (q==0){
+                    }else {
+                    q=q-1;
+                    total=total-1;
+                    col.push("Q");
+                    }
+                    break;
+                                      case 18:
+                     if (r==0){
+                    }else {
+                    r=r-1;
+                    total=total-1;
+                    col.push("R");
+                    }
+                    break;
+                                          case 19:
+                     if (s==0){
+                    }else {
+                    s=s-1;
+                    total=total-1;
+                    col.push("S");
+                    }
+                    break;
+                                              case 20:
+                     if (t==0){
+                    }else {
+                    t=t-1;
+                    total=total-1;
+                    col.push("T");
+                    }
+                    break;
+                                                  case 21:
+                     if (u==0){
+                    }else {
+                    u=u-1;
+                    total=total-1;
+                    col.push("U");
+                    }
+                    break;
+                                                      case 22:
+                     if (v==0){
+                    }else {
+                    v=v-1;
+                    total=total-1;
+                    col.push("V");
+                    }
+                    break;
+                                                          case 23:
+                     if (x==0){
+                    }else {
+                    x=x-1;
+                    total=total-1;
+                    col.push("X");
+                    }
+                    break;
+                                                              case 24:
+                     if (y==0){
+                    }else {
+                    y=y-1;
+                    total=total-1;
+                    col.push("Y");
+                    }
+                    break;
+                                                                  case 25:
+                     if (z==0){
+                    }else {
+                    z=z-1;
+                    total=total-1;
+                    col.push("Z");
+                    }
+                    break;
+            }
+        }
+  
+    
+    }
+
+    private void actcola() {
+        
+        try {
+     
+File archivo=new File("C:\\Users\\HP\\Documents\\11\\grafocolaf.txt");
+
+FileWriter escribir=new FileWriter(archivo,false);
+ d_cola tem = col.first;
+escribir.write("digraph G\n");
+escribir.write("");
+escribir.write("{ \n");
+escribir.write("");
+    escribir.write(tem.getInfo()+"1"+"->"+tem.getSig().getInfo()+"0"+"\n ");
+    int g =0;
+         for (int y =0; y<col.tam-1;y++){
+         tem = tem.getSig();
+         try{
+             escribir.write(tem.getInfo()+""+g+"->"+tem.getSig().getInfo()+""+(g+1)+"\n ");
+             g++;
+         }catch(Exception e){}
+             //System.out.println("error");
+         }
+         
+escribir.write("}");
+escribir.close();
+
+
+
+
+      String dotPath = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe" ;
+      String fileInputPath = "C:\\Users\\HP\\Documents\\11\\grafocolaf.txt";
+      String fileOutputPath = "C:\\Users\\HP\\Documents\\11\\grafocolaf.jpg";
+      String tParam = "-Tjpg";
+      String tOParam = "-o";
+      String[] cmd = new String[5];
+      cmd[0] = dotPath;
+      cmd[1] = tParam;
+      cmd[2] = fileInputPath;
+      cmd[3] = tOParam;
+      cmd[4] = fileOutputPath;
+                  
+      Runtime rt1 = Runtime.getRuntime();
+      
+      rt1.exec( cmd );
+      
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    } finally {
+            System.out.println("irrecuperable");
+    }
+    }
+
+    private void actualizard() throws InterruptedException {
+         Thread.sleep(170);
+  ImageIcon img=new ImageIcon(("C:\\Users\\HP\\Documents\\11\\grafocolaf.jpg"));
+             JLabel ll=new JLabel(img, JLabel.CENTER);
+         
+           ll.setBounds(0, 0, 440, 706);
+             cf.add(ll);
+             cf.repaint();
+    }
+
+    private void actualizardic1() throws InterruptedException {
+         Thread.sleep(170);
+   ImageIcon img=new ImageIcon(("C:\\Users\\HP\\Documents\\11\\grafo1.jpg"));
+             JLabel l=new JLabel(img, JLabel.CENTER);
+         
+           l.setBounds(0, 0, 440, 706);
+             diccionario.add(l);
+             diccionario.repaint();
+    }
+
+    private void lista_jugadores() {
+         try {
+     
+File archivo=new File("C:\\Users\\HP\\Documents\\11\\grafoj.txt");
+
+FileWriter escribir=new FileWriter(archivo,false);
+
+escribir.write("digraph G\n");
+escribir.write("");
+escribir.write("{ \n");
+escribir.write("");
+
+     nodo_s tem= rr.getcabeza();
+     int c =0;
+       System.out.println(rr.tam+"f");
+     while(!(c==rr.tam)){
+     c++;
+       
+  escribir.write(tem.getInfo()+"->"+tem.getSig().getInfo()+"\n ");
+     tem = tem.getSig();
+     
+     }
+    
+   
+
+         
+escribir.write("}");
+escribir.close();
+
+
+
+
+      String dotPath = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe" ;
+      String fileInputPath = "C:\\Users\\HP\\Documents\\11\\grafoj.txt";
+      String fileOutputPath = "C:\\Users\\HP\\Documents\\11\\grafoj.jpg";
+      String tParam = "-Tjpg";
+      String tOParam = "-o";
+      String[] cmd = new String[5];
+      cmd[0] = dotPath;
+      cmd[1] = tParam;
+      cmd[2] = fileInputPath;
+      cmd[3] = tOParam;
+      cmd[4] = fileOutputPath;
+                  
+      Runtime rt1 = Runtime.getRuntime();
+      
+      rt1.exec( cmd );
+      
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    } finally {
+           // System.out.println("irrecuperable");
+    }
+    
+    }
+
+    private void lsita_j_act() throws InterruptedException {
+        Thread.sleep(170);
+         ImageIcon img=new ImageIcon(("C:\\Users\\HP\\Documents\\11\\grafoj.jpg"));
+             JLabel ll=new JLabel(img, JLabel.CENTER);
+         
+           ll.setBounds(0, 0, 440, 700);
+             lj.add(ll);
+             lj.repaint();
+           this.repaint();
+           
+        jTabbedPane1.repaint();
+    }
+
+   
+
+    private void matriz(int datostdimension, Lista_Simple datosdobles, Lista_Simple datostriples) {
+    orto.crear(datostdimension+1);
+        nodo_s d = datosdobles.getcabeza();
+         int contador =0;
+        while (d!=null && d.getSig()!=null){
+           contador++;
+            orto.darvalor(Integer.parseInt((String) d.getInfo()), Integer.parseInt((String) d.getSig().getInfo()), 250+contador);
+        d=d.getSig().getSig();
+        }
+        
+        nodo_s t = datostriples.getcabeza();
+          contador =0;
+        while (t!=null && t.getSig()!=null){
+           //  JOptionPane.showMessageDialog(null,t.getInfo()+"---"+t.getSig().getInfo());
+            contador++;
+            orto.darvalor(Integer.parseInt((String) t.getInfo()), Integer.parseInt((String) t.getSig().getInfo()), 750+contador);
+        t=t.getSig().getSig();
+        }
+                
+              
+    grap_matri();
+    }
+
+    private void grap_matri() {
+    try {
+     
+File archivo=new File("C:\\Users\\HP\\Documents\\11\\grafom.txt");
+
+FileWriter escribir=new FileWriter(archivo,false);
+
+escribir.write("digraph G\n");
+escribir.write("");
+escribir.write("{ \n");
+escribir.write("");
+//
+int valor=orto.tam;
+      nodo_o  inif= orto.nodostart;
+    nodo_o      inic= orto.nodostart;
+    nodo_o    temp5 = orto.cabeza;
+         for (int y=0; y<orto.tam-1;y++){
+       
+   
+        
+         for (int y1=0; y1<orto.tam-1;y1++){
+            if(!((inif.getInfo()!=null)  &&(inif.getAnt()==null))){
+                   escribir.write(inif.getInfo()+"->"+inif.getAnt().getInfo()+"\n ");
+                }
+            if(!((inif.getInfo()!=null)  && (inif.getAbajo()==null))){
+             escribir.write(inif.getInfo()+"->"+inif.getAbajo().getInfo()+"\n ");
+            }
+            if(!((inif.getInfo()!=null)  &&(inif.getSig()==null))){
+             escribir.write(inif.getInfo()+"->"+inif.getSig().getInfo()+"\n ");
+            }
+            if(!((inif.getInfo()!=null)  &&(inif.getArriba()==null))){
+             escribir.write(inif.getInfo()+"->"+inif.getArriba().getInfo()+"\n ");
+            }
+            
+
+  
+           inif =inif.getAnt();
+         }
+        
+            inic = inic.getAbajo();
+            inif=inic;
+     }
+    
+  
+   Lista_Simple listtemp = new Lista_Simple();
+         nodo_o cabeza ;
+         nodo_o nodostart = orto.nodostart ;
+//          for(int xx = 0; xx<(valor-1);xx++){
+//              cabeza=null;
+//              for (int yy =0;yy<valor-1;yy++){
+//              if (xx==0){   
+//                    nodo_o c= new nodo_o();
+//                    if (cabeza ==null){
+//                    c.setSig(cabeza);
+//                    cabeza=c;
+//                        nodostart= c;
+//                    }else {
+//                    c.setSig(cabeza);
+//                    cabeza.setAnt(c);
+//                    cabeza=c;  
+//                   }
+//                    listtemp.enlistar(c);
+//      
+//              }else{
+//                    nodo_o c= new nodo_o();
+//                    if (cabeza ==null){
+//                    c.setSig(cabeza);
+//                    c.setArriba((nodo_o) listtemp.itemnodo(yy));
+//                    ((nodo_o) listtemp.itemnodo(yy)).setAbajo(c);
+//                    listtemp.cambiar(yy, c);
+//                    cabeza=c;
+//            
+//                    }else {
+//                     
+//                    c.setArriba((nodo_o) listtemp.itemnodo(yy));
+//                    ((nodo_o) listtemp.itemnodo(yy)).setAbajo(c);
+//                    listtemp.cambiar(yy, c);
+//                    c.setSig(cabeza);
+//                    cabeza.setAnt(c);
+//                    
+//                    cabeza=c;  
+//                   }
+//                  }
+//              }
+//          
+//          }
+
+
+
+
+//
+//     nodo_s tem= rr.getcabeza();
+//     int c =0;
+//       System.out.println(rr.tam+"f");
+//     while(!(c==rr.tam)){
+//     c++;
+//       
+//  escribir.write(tem.getInfo()+"->"+tem.getSig().getInfo()+"\n ");
+//     tem = tem.getSig();
+//     
+//     }
+    
+   
+
+         
+escribir.write("}");
+escribir.close();
+
+
+
+
+      String dotPath = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe" ;
+      String fileInputPath = "C:\\Users\\HP\\Documents\\11\\grafom.txt";
+      String fileOutputPath = "C:\\Users\\HP\\Documents\\11\\grafom.jpg";
+      String tParam = "-Tjpg";
+      String tOParam = "-o";
+      String[] cmd = new String[5];
+      cmd[0] = dotPath;
+      cmd[1] = tParam;
+      cmd[2] = fileInputPath;
+      cmd[3] = tOParam;
+      cmd[4] = fileOutputPath;
+                  
+      Runtime rt1 = Runtime.getRuntime();
+      
+      rt1.exec( cmd );
+      
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    } finally {
+           // System.out.println("irrecuperable");
+    }
+    }
+
+    private void agregar_matriz() {
+        orto.mostrar();
+      ImageIcon img=new ImageIcon(("C:\\Users\\HP\\Documents\\11\\grafom.jpg"));
+             JLabel l=new JLabel(img, JLabel.CENTER);
+         
+           l.setBounds(0, 0, 440, 706);
+             m1.add(l);
+             m1.repaint();
+    }
+
+    private void fichasjugador() {
+        
+    nodo_s tem= rr.getcabeza();
+     int c =0;   
+     while(!(c==rr.tam)){
+     c++;
+     Lista_Simple sim = new Lista_Simple();
+     for (int il=0;il<7;il++){
+            sim.enlistar(col.pop());
+     }
+     tem.fichas=sim;
+     tem = tem.getSig();
+     
+     }
+    }
+
+    private void comenzarj() {
+         try {
+     
+File archivo=new File("C:\\Users\\HP\\Documents\\11\\grafoac.txt");
+
+FileWriter escribir=new FileWriter(archivo,false);
+
+escribir.write("digraph G\n");
+escribir.write("");
+escribir.write("{ \n");
+escribir.write("");
+//
+   nodo_s tem= rr.getcabeza();
+     int c =0; 
+      int numero = (int) (Math.random() * (rr.tam-1) )+ 1;
+     while(!(c==numero)){
+     c++;
+           
+     tem = tem.getSig();
+     
+     }
+     ju1.setText((String) tem.getInfo());
+     Lista_Simple  a1 =  (Lista_Simple) tem.getfichas();
+     nodo_s tm = a1.getcabeza();
+     l1.setText("   "+(String) tm.getInfo());
+     c1.setLabel("   "+(String) tm.getInfo());
+      escribir.write(tm.getInfo()+"->"+tem.getSig().getInfo()+"\n ");
+     tm=tm.getSig();
+          l2.setText("   "+(String) tm.getInfo());
+           c2.setLabel("   "+(String) tm.getInfo());
+             escribir.write(tm.getInfo()+"->"+tem.getSig().getInfo()+"\n ");
+     tm=tm.getSig();
+          l3.setText("   "+(String) tm.getInfo());
+           c3.setLabel("   "+(String) tm.getInfo());
+             escribir.write(tm.getInfo()+"->"+tem.getSig().getInfo()+"\n ");
+     tm=tm.getSig();
+          l4.setText("   "+(String) tm.getInfo());
+           c4.setLabel("   "+(String) tm.getInfo());
+             escribir.write(tm.getInfo()+"->"+tem.getSig().getInfo()+"\n ");
+     tm=tm.getSig();
+          l5.setText("   "+(String) tm.getInfo());
+           c5.setLabel("   "+(String) tm.getInfo());
+             escribir.write(tm.getInfo()+"->"+tem.getSig().getInfo()+"\n ");
+     tm=tm.getSig();
+          l6.setText("   "+(String) tm.getInfo());
+           c6.setLabel("   "+(String) tm.getInfo());
+             escribir.write(tm.getInfo()+"->"+tem.getSig().getInfo()+"\n ");
+     tm=tm.getSig();
+          l7.setText("   "+(String) tm.getInfo());
+           c7.setLabel("   "+(String) tm.getInfo());
+     
+  
+     escribir.write("}");
+escribir.close();
+
+
+
+
+      String dotPath = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe" ;
+      String fileInputPath = "C:\\Users\\HP\\Documents\\11\\grafoac.txt";
+      String fileOutputPath = "C:\\Users\\HP\\Documents\\11\\grafoac.jpg";
+      String tParam = "-Tjpg";
+      String tOParam = "-o";
+      String[] cmd = new String[5];
+      cmd[0] = dotPath;
+      cmd[1] = tParam;
+      cmd[2] = fileInputPath;
+      cmd[3] = tOParam;
+      cmd[4] = fileOutputPath;
+                  
+      Runtime rt1 = Runtime.getRuntime();
+      
+      rt1.exec( cmd );
+      
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    } finally {
+           // System.out.println("irrecuperable");
+    }
+    }
+
+    private void agregarjuego() {
+    ImageIcon img=new ImageIcon(("C:\\Users\\HP\\Documents\\11\\grafoac.jpg"));
+             JLabel ll=new JLabel(img, JLabel.CENTER);
+         
+           ll.setBounds(0, 0, 440, 700);
+             fac.add(ll);
+             fac.repaint();
+           this.repaint();
+           
+        jTabbedPane1.repaint();
+    
+    }
+
+    private void crear_Tablero() {
+     orto1= orto;
+     //casilla a = new casilla();
+      nodo_o  inif= orto1.nodostart;
+    nodo_o      inic= orto1.nodostart;
+        for (int y=0; y<orto1.tam-1;y++){
+       
+   
+        
+         for (int y1=0; y1<orto1.tam-1;y1++){
+             boolean p1,p2;
+             p1=false ;
+             p2 =false;
+             for (int o=0; o<100;o++){
+                 System.out.println(inif.getInfo()+"----"+(250+o)+"---"+(750+o));
+                 try{
+                     if ( Integer.parseInt((String.valueOf(inif.getInfo())))==(250+o) ){
+                        // JOptionPane.showMessageDialog(null, "entro1");
+                                p1=true;
+                            }else if (Integer.parseInt((String.valueOf(inif.getInfo())))==(750+o) ){
+                          //      JOptionPane.showMessageDialog(null, "entro2");
+                                    p2=true;
+                            }
+                 }catch (Exception e){}
+             }
+       if (p1 == true){
+       JButton b1= new JButton ();
+       b1.setText("Dobles");
+        b1.setBounds(0+y*(550/tamañot), 0+y1*(550/tamañot), 550/tamañot, 550/tamañot);
+        pan1.add(b1);
+       }else   if (p2 == true){
+       JButton b1= new JButton ();
+       b1.setText("Triples");
+        b1.setBounds(0+y*(550/tamañot), 0+y1*(550/tamañot), 550/tamañot, 550/tamañot);
+        pan1.add(b1);
+       }else  {
+       JButton b1= new JButton ();
+       b1.setText("");
+        b1.setBounds(0+y*(550/tamañot), 0+y1*(550/tamañot), 550/tamañot, 550/tamañot);
+        pan1.add(b1);
+       }
+          //System.out.print(inif.getInfo()+" ");
+        p1 =false;
+        p2 = false;
+                
+           inif =inif.getAnt();
+         }
+          System.out.println();
+            inic = inic.getAbajo();
+            inif=inic;
+     }
+    
+    }
 }
